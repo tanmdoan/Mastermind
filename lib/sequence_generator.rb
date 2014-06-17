@@ -1,4 +1,7 @@
+require "./lib/sequence"
+
 class SequenceGenerator
+  attr_reader :length, :pool
   def initialize(length, pool)
     @length = length
     @pool = pool

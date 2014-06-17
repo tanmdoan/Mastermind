@@ -12,7 +12,7 @@ class CLI
   def initialize(stdin, stdout, game)
     @stdin  = stdin
     @stdout = stdout
-    @game   = game
+    @game   = Game.new
   end
 
   def call

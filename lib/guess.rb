@@ -1,8 +1,6 @@
 class Guess
-  def initialize(guess)
-    @guess = guess
-  end
-
-  def guess
+  attr_reader :guess
+  def initialize(input)
+    @input = input
   end
 end
