@@ -10,7 +10,7 @@ class Game
   end
 
   def run
-    @sequence = SequenceGenerator.new(4, ['R','G','B','Y').generate
+    @sequence = SequenceGenerator.new(4).generate
   end
 
   def comparison

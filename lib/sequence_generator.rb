@@ -2,16 +2,16 @@ require "./lib/sequence"
 
 class SequenceGenerator
   attr_reader :length, :pool
-  def initialize(length, pool)
+  def initialize(length, pool = "rrrrbbbbggggyyyy")
     @length = length
     @pool = pool
   end
 
   def generate
-    code = (0...length).collect{ pool.sample }
+    code = pool.split("").shuffle.join.slice(1..4)
     Sequence.new(code)
   end
-
-  def to_s
-  end
 end
+
+
+sequeance_gen = SequenceGenerator.new(length, pool)

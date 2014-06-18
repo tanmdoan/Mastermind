@@ -22,7 +22,6 @@ class SequenceMatcher
   end
 
   def count_correct_letters
-    binding.pry
     guess.chars.select.with_index {|char, i| char == answer.chars(i)}.length
   end
 
