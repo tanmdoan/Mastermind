@@ -6,12 +6,12 @@ class SequenceMatcher
     @guess  = guess.chars
   end
 
-  def same?
+  def same
     guess == answer
     # will return true if the sequence objects are the same
   end
 
-  def diff
+  def count_in_correct_spots
     correct_spots = 0
     guess.each_with_index do |char, i|
       correct_spots += 1 if char == answer[i]

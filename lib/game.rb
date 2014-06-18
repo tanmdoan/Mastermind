@@ -9,8 +9,7 @@ class Game
     # end
   end
 
-  def run
-    @sequence = SequenceGenerator.new(4).generate
+  def play
   end
 
   def comparison
