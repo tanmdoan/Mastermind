@@ -1,6 +1,7 @@
 class Guess
-  attr_reader :guess     # => nil
-  def initialize(input)
-    @input = input
+  attr_reader :sequence
+
+  def initialize(sequence)
+    @sequence = sequence
   end
 end

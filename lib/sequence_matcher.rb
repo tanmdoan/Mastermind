@@ -2,8 +2,8 @@ require 'pry'
 class SequenceMatcher
   attr_reader :guess, :answer
   def initialize(guess, answer)
-    @answer = answer
-    @guess  = guess
+    @answer = answer.chars
+    @guess  = guess.chars
   end
 
   def same?
@@ -13,16 +13,22 @@ class SequenceMatcher
 
   def diff
     correct_spots = 0
-    guess.chars.each_with_index do |char, i|
-      if char == answer.chars[i]
-        correct_spots += 1
-      end
+    guess.each_with_index do |char, i|
+      correct_spots += 1 if char == answer[i]
     end
     correct_spots
   end
 
   def count_correct_letters
-    guess.chars.select.with_index {|char, i| char == answer.chars(i)}.length
+    count = 0
+    guess.each do |letter|
+      if answer.include?(letter)
+        count += 1
+        answer.slice!(answer.index(letter))
+      end
+    end
+    count
+    # guess.chars.select.with_index {|char, i| char == answer.chars(i)}.length
   end
 
   def compare

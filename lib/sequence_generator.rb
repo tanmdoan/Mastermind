@@ -12,6 +12,3 @@ class SequenceGenerator
     Sequence.new(code)
   end
 end
-
-
-sequeance_gen = SequenceGenerator.new(length, pool)

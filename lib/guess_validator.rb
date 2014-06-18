@@ -7,24 +7,15 @@ class GuessValidator
     @guess = guess
   end
 
-  def valid
-    guess.chars.count == 4
+  def valid?
+    guess.sequence.length == 4
   end
-
 
   def short?
-    if guess.chars.count < 4
-      puts "Sorry your guess is too short!"
-    else
-      guess.valid
-    end
+    guess.sequence.length < 4
   end
 
-  def too_long
-    if guess.chars.count > 4
-      puts "Sorry your guess is too long!"
-    else
-      guess.valid
-    end
+  def long?
+    guess.sequence.length > 4
   end
 end

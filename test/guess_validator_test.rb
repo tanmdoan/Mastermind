@@ -11,25 +11,30 @@ class GuessValidatorTest < Minitest::Test
   # need to go to guess class
 
   def test_guess_validator_gets_guess
-    skip
-    guess = Guess.new("rrrr")
+    guess     = Guess.new("rrrr")
     validator = GuessValidator.new(guess)
 
-    assert_equal
+    assert_equal guess, validator.guess
   end
 
   def test_guess_is_valid
-    guess = Guess.new("yyyy")
+    guess     = Guess.new("yyyy")
     validator = GuessValidator.new(guess)
 
-    assert validatory.valid
+    assert validator.valid?
   end
 
   def test_guess_is_short?
-    skip
+    guess     = Guess.new("yyy")
+    validator = GuessValidator.new(guess)
+
+    assert validator.short?
   end
 
   def test_guess_is_too_long
-    skip
+    guess     = Guess.new("yyyyy")
+    validator = GuessValidator.new(guess)
+
+    assert validator.long?
   end
 end

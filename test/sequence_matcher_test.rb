@@ -3,8 +3,8 @@ require './lib/sequence_matcher'
 
 class SequenceMatcherTest < Minitest::Test
   def test_it_knows_they_match
-    guess  = %w[r b g y]
-    answer = %w[r b g y]
+    guess  = "rbgy"
+    answer = "rbgy"
     sequence_matcher = SequenceMatcher.new(guess, answer)
 
     assert sequence_matcher.same?
