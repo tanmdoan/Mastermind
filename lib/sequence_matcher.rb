@@ -1,5 +1,6 @@
+require 'pry'
 class SequenceMatcher
-  attr_reader :guess, :answer    # => nil
+  attr_reader :guess, :answer
   def initialize(guess, answer)
     @answer = answer
     @guess  = guess
@@ -21,7 +22,8 @@ class SequenceMatcher
   end
 
   def count_correct_letters
-    (guess.chars.sort - answer.chars.sort).length
+    binding.pry
+    guess.chars.select.with_index {|char, i| char == answer.chars(i)}.length
   end
 
   def compare

@@ -26,6 +26,14 @@ class SequenceMatcherTest < Minitest::Test
     assert_equal 2, sequence_matcher.diff
   end
 
+  def test_knows_how_many_correct_spots_with_diff_spots
+    guess  = "rryy"
+    answer = "rbgr"
+    sequence_matcher = SequenceMatcher.new(guess,answer)
+
+    assert_equal 1, sequence_matcher.diff
+  end
+
   def test_it_counts_number_letters_correct
     guess  = "rryy"
     answer = "rryb"
