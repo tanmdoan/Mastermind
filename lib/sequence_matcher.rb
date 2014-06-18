@@ -1,5 +1,5 @@
 class SequenceMatcher
-  attr_reader :guess, :answer
+  attr_reader :guess, :answer    # => nil
   def initialize(guess, answer)
     @answer = answer
     @guess  = guess
@@ -12,8 +12,8 @@ class SequenceMatcher
 
   def diff
     correct_spots = 0
-    guess.char.each_with_index do |char, i|
-      if char == answer.char[i]
+    guess.chars.each_with_index do |char, i|
+      if char == answer.chars[i]
         correct_spots += 1
       end
     end
@@ -32,7 +32,7 @@ class SequenceMatcher
     # you can use it like this in the game class:
     # comparison = SequenceMatcher.compare(guess, answer)
     # return "You guessed correctly!" if comparison[0]
-    # "You guessed #{SequenceMatcher.compare[2]} correct letters. #{compare[1]}
+    # "You guessed #{SequenceMatcher.comparison[2]} correct letters. #{comparison[1]}
     # of them were in the right spot."
   end
 end

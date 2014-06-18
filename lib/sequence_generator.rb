@@ -11,4 +11,7 @@ class SequenceGenerator
     code = (0...length).collect{ pool.sample }
     Sequence.new(code)
   end
+
+  def to_s
+  end
 end

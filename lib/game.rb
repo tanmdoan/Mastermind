@@ -2,8 +2,8 @@ class Game
   def initialize
     # class Game
     #   def initialize
-    #     guess = GuessGenerator.new
-    #     answer = AnswerGenerator.new
+    #     guess = GuessValidator.new
+    #     answer = SequenceGenerator.new
     #     matcher = SequenceMatcher.new(guess, answer)
     #   end
     # end

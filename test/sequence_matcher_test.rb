@@ -11,19 +11,26 @@ class SequenceMatcherTest < Minitest::Test
   end
 
   def test_it_knows_they_are_different
-    guess  = %w[r b g y]
-    answer = %w[g y b r]
+    guess  = "rgby"
+    answer = "rbyg"
     sequence_matcher = SequenceMatcher.new(guess, answer)
 
-    refute sequence_matcher.diff
+    refute sequence_matcher.same?
+  end
+
+  def test_knows_how_many_correct_spots
+    guess  = "rrbb"
+    answer = "rybg"
+    sequence_matcher = SequenceMatcher.new(guess, answer)
+
+    assert_equal 2, sequence_matcher.diff
   end
 
   def test_it_counts_number_letters_correct
-    skip
-    guess  = %w[r r b y]
-    answer = %w[r r b c]
+    guess  = "rryy"
+    answer = "rryb"
     sequence_matcher = SequenceMatcher.new(guess,answer)
 
-    assert_equal 3, sequence_matcher.length
+    assert_equal 3, sequence_matcher.count_correct_letters
   end
 end
