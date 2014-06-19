@@ -39,7 +39,7 @@ class CLI
     puts "The object of the game is to guess the four codes with the following conditions:\n"
     puts "1. At default level the guess is exactly four characters"
     puts "2. The guess may include repeats in any random order"
-    puts "3. "
+    puts "3. Enter just the beginning letters only, example: rgby"
   end
 end
 

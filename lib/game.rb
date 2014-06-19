@@ -26,22 +26,23 @@ class Game
       validator = GuessValidator.new(guess)
       matcher = SequenceMatcher.new(guess.sequence, answer.code)
         if matcher.same
-        end_time = Time.new
-        puts "Woot, you win!!!\n It took you #{@guesses.count} guess(es)"
-        calculate_time(initial_time, end_time)
+          end_time = Time.new
+          puts "Woot, you win!!!\n It took you #{@guesses.count} guess(es)"
+          calculate_time(initial_time, end_time)
         break
         elsif  validator.valid?
-        correct_spots = matcher.count_in_correct_spots
-        correct_letters = matcher.count_correct_letters
-        puts "You have #{correct_spots} letter(s) in the right spot, out of the #{correct_letters} correct.
-        You've guessed #{guesses.count} times."
+          correct_spots = matcher.count_in_correct_spots
+          correct_letters = matcher.count_correct_letters
+          puts "You have #{correct_spots} letter(s) in the right spot, out of the #{correct_letters} correct.
+          You've guessed #{guesses.count} times."
         elsif @command == "q"
           puts "Latez!"
           break
         elsif validator.short?
-        puts "Sorry your guess is too short!"
+          puts "Sorry your guess is too short!"
         else
-        puts "Your guess is too long!"
+          puts "Sorry your guess is too long!"
+
       end
     end
   end
