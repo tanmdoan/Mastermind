@@ -1,5 +1,3 @@
-require './lib/guess'
-
 class GuessValidator
   attr_reader :guess
 
