@@ -7,7 +7,7 @@ class SequenceMatcherTest < Minitest::Test
     answer = "rbgy"
     sequence_matcher = SequenceMatcher.new(guess, answer)
 
-    assert sequence_matcher.same?
+    assert sequence_matcher.same
   end
 
   def test_it_knows_they_are_different
@@ -15,7 +15,7 @@ class SequenceMatcherTest < Minitest::Test
     answer = "rbyg"
     sequence_matcher = SequenceMatcher.new(guess, answer)
 
-    refute sequence_matcher.same?
+    refute sequence_matcher.same
   end
 
   def test_knows_how_many_correct_spots
@@ -23,7 +23,7 @@ class SequenceMatcherTest < Minitest::Test
     answer = "rybg"
     sequence_matcher = SequenceMatcher.new(guess, answer)
 
-    assert_equal 2, sequence_matcher.diff
+    assert_equal 2, sequence_matcher.count_in_correct_spots
   end
 
   def test_knows_how_many_correct_spots_with_diff_spots
@@ -31,7 +31,7 @@ class SequenceMatcherTest < Minitest::Test
     answer = "rbgr"
     sequence_matcher = SequenceMatcher.new(guess,answer)
 
-    assert_equal 1, sequence_matcher.diff
+    assert_equal 1, sequence_matcher.count_in_correct_spots
   end
 
   def test_it_counts_number_letters_correct

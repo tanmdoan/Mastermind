@@ -1,7 +1,3 @@
-require "./lib/guess_validator"
-require "./lib/guess"
-require "./lib/sequence_matcher"
-require "./lib/sequence_generator"
 require "./lib/game"
 
 class CLI
@@ -13,9 +9,9 @@ class CLI
   end
 
   def main_menu
-    puts "*****''{{{Mastermind}}}''*****"
+    puts "*****''{{{AlmostMastermind}}}''*****"
     puts "enter p to start jammin, i to learn how to play, and q if you're too
-    pansy to try"
+    pansy to try and want to quit anytime during the game"
       print "Option: "
     loop do
       command = gets.chomp
@@ -24,11 +20,11 @@ class CLI
         puts "Goodbye!"
         break
       when "i"
-        instruction
+        instructions
       when "p"
         start
       else
-        "Sorry I don't recognize your #{command}"
+        "Sorry #{command} is not an option."
       end
     end
   end
@@ -36,6 +32,15 @@ class CLI
   def start
     game.play
   end
+
+  def instructions
+    puts "Mastermind instructions:\n"
+    puts "A generated code of (r)ed, (g)reen, (b)lue, and (y)ellow has been set.\n"
+    puts "The object of the game is to guess the four codes with the following conditions:\n"
+    puts "1. At default level the guess is exactly four characters"
+    puts "2. The guess may include repeats in any random order"
+    puts "3. "
+  end
 end
 
-CLI.new.main_menu
+# CLI.new.main_menu

@@ -3,4 +3,4 @@ $LOAD_PATH.unshift File.expand_path '../../lib', __FILE__
 
 require 'cli'
 
-CLI.new($stdin, $stdout, Game.new).call
+CLI.new.main_menu
