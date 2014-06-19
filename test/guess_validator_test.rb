@@ -30,11 +30,4 @@ class GuessValidatorTest < Minitest::Test
 
     assert validator.long?
   end
-
-  def test_guess_is_invalid?
-    guess = Guess.new("ayyy")
-    validator = GuessValidator.new(guess)
-
-     assert_equal count = 3, validator.allowed_sequence
-  end
 end
